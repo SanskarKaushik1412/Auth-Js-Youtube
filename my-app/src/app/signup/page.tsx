@@ -18,6 +18,7 @@ export default function signuppage() {
       const[loading,setLoading] = React.useState(false)
 
      const onsignup =async () => {
+        console.log(user)
      try {
         setLoading(true);
        const response = await axios.post("/api/users/signup",user);
@@ -67,8 +68,8 @@ export default function signuppage() {
             className="p-2 border border-color: coral; rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black"
             id=""
             type=""
-            value={user.Password}
-            onChange={(e)=> setUser({...user,Password: e.target.value})}
+            value={user.password}
+            onChange={(e)=> setUser({...user,password: e.target.value})}
             placeholder="Password"
             />
             <button
